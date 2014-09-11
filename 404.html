@@ -14,8 +14,91 @@
 
     <script type="text/javascript" src="./vendors/jquery/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="./vendors/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <style>
+        body
+        {
+            overflow: hidden;
+        }
 
+        .fly
+        {
+            font-size: 20em;
+            opacity: 0.1;
 
+            position: fixed;
+
+            -webkit-animation: fly 30s linear infinite;
+            -moz-animation: fly 30s linear infinite;
+            -o-animation: fly 30s linear infinite;
+        }
+
+        @-webkit-keyframes fly {
+            0% {
+                bottom: 18%;
+                left: 0;
+            }
+            25% {
+                bottom: 58%;
+                left: 44%;
+            }
+            50% {
+                bottom: 18%;
+                left: 88%;
+            }
+            75% {
+                bottom: -12%;
+                left: 44%;
+            }
+            100% {
+                bottom: 18%;
+                left: 0;
+            }
+        }
+        @-moz-keyframes fly {
+            0% {
+                bottom: 18%;
+                left: 0;
+            }
+            25% {
+                bottom: 58%;
+                left: 44%;
+            }
+            50% {
+                bottom: 18%;
+                left: 88%;
+            }
+            75% {
+                bottom: -12%;
+                left: 44%;
+            }
+            100% {
+                bottom: 18%;
+                left: 0;
+            }
+        }
+        @-o-keyframes fly {
+            0% {
+                bottom: 18%;
+                left: 0;
+            }
+            25% {
+                bottom: 58%;
+                left: 44%;
+            }
+            50% {
+                bottom: 18%;
+                left: 88%;
+            }
+            75% {
+                bottom: -12%;
+                left: 44%;
+            }
+            100% {
+                bottom: 18%;
+                left: 0;
+            }
+        }
+    </style>
 </head>
 <body class="container">
     <div class="row">
@@ -27,6 +110,7 @@
                 QAQ, why are you doing this.
             </p>
         </div>
+        <div class="fly">404</div>
     </div>
 </body>
 </html>
