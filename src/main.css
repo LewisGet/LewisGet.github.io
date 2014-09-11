@@ -195,17 +195,47 @@ header
 @-moz-keyframes movehelicopter {
     0% {
         margin-left: -128px;
+        margin-top: 50px;
+    }
+    18% {
+        margin-top: 25px;
+    }
+    25% {
+        margin-top: 0px;
+    }
+
+    50% {
+        margin-top: 50px;
+    }
+    58% {
+        margin-top: 25px;
     }
     100% {
         margin-left: 100%;
+        margin-top: 0;
     }
 }
 @-o-keyframes movehelicopter {
     0% {
         margin-left: -128px;
+        margin-top: 50px;
+    }
+    18% {
+        margin-top: 25px;
+    }
+    25% {
+        margin-top: 0px;
+    }
+
+    50% {
+        margin-top: 50px;
+    }
+    58% {
+        margin-top: 25px;
     }
     100% {
         margin-left: 100%;
+        margin-top: 0;
     }
 }
 
