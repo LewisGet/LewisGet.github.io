@@ -158,6 +158,12 @@ header
     overflow: hidden;
 }
 
+.chartContainer
+{
+    /** responsive bug */
+    overflow: hidden;
+}
+
 .label
 {
     line-height: 2em;
