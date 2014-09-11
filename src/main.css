@@ -1,0 +1,207 @@
+body
+{
+    background-image      : url("../images/Wood-Background-Pictures-Free-Download.jpg");
+    background-attachment : fixed;
+}
+
+header
+{
+    display : block;
+    height  : 500px;
+}
+
+.siteTitle
+{
+    margin-top : 150px;
+    width      : 100%;
+    height     : 350px;
+    color      : #EEE;
+}
+
+.siteTitle h1
+{
+    font-size : 100px;
+}
+
+.siteTitle h2
+{
+}
+
+.lewisImage
+{
+    width    : 100%;
+    position : relative;;
+    top      : -88px;
+}
+
+.lewisImage img
+{
+    width         : 168px;
+    height        : 168px;
+
+    border-radius : 50%;
+    border        : 5px solid #eee;
+}
+
+@media (max-width: 888px) {
+    .siteTitle h1 {
+        font-size : 88px;
+    }
+}
+
+@media (max-width: 588px) {
+    .siteTitle
+    {
+        margin-top : 88px;
+        width      : 100%;
+        height     : 88px;
+        color      : #EEE;
+    }
+
+    .siteTitle h1 {
+        font-size : 58px;
+    }
+
+    header
+    {
+        height  : 350px;
+    }
+
+    .lewisImage img
+    {
+        width         : 158px;
+        height        : 158px;
+    }
+
+    .lewisImage
+    {
+        top      : 88px;
+    }
+}
+
+.greyBlock
+{
+    border-top       : 1px solid #e4e4e4;
+    border-bottom    : 1px solid #e4e4e4;
+    background-color : #fafafa;
+}
+
+.whiteBlock
+{
+    border-top       : 1px solid #e4e4e4;
+    border-bottom    : 1px solid #e4e4e4;
+    background-color : #fff;
+}
+
+.contentTitle
+{
+    color       : #333;
+
+    font-weight : bold;
+    font-size   : 42px;
+
+    margin      : 50px 0;
+}
+
+.contentText
+{
+    color     : #393939;
+
+    font-size : 20px;
+}
+
+#about
+{
+    padding : 100px 0px;
+}
+
+#project
+{
+    padding-bottom : 150px;
+    margin-top     : 200px;
+}
+
+#project img, #project iframe
+{
+    max-height    : 158px;
+    overflow      : hidden;
+    border-radius : 5px;
+    border        : 5px solid #eee;
+}
+
+#project h2
+{
+
+}
+
+#project p
+{
+    margin-bottom : 30px;
+}
+
+.helicopter
+{
+    background-image : url("../images/helicopter.png");
+    width            : 128px;
+    height           : 128px;
+
+    -webkit-animation: movehelicopter 15s linear infinite;
+    -moz-animation: movehelicopter 15s linear infinite;
+    -o-animation: movehelicopter 15s linear infinite;
+}
+
+#runways
+{
+    width: 100%;
+    height: 178px;
+
+    overflow: hidden;
+}
+
+@-webkit-keyframes movehelicopter {
+    0% {
+        margin-left: -128px;
+        margin-top: 50px;
+    }
+    18% {
+        margin-top: 25px;
+    }
+    25% {
+        margin-top: 0px;
+    }
+
+    50% {
+        margin-top: 50px;
+    }
+    58% {
+        margin-top: 25px;
+    }
+    100% {
+        margin-left: 100%;
+        margin-top: 0;
+    }
+}
+@-moz-keyframes movehelicopter {
+    0% {
+        margin-left: -128px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+@-o-keyframes movehelicopter {
+    0% {
+        margin-left: -128px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+footer
+{
+    margin-top: 150px;
+    padding : 50px 0;
+    color   : #333;
+    background: #eee;
+}
