@@ -158,6 +158,11 @@ header
     overflow: hidden;
 }
 
+.label
+{
+    line-height: 2em;
+}
+
 @-webkit-keyframes movehelicopter {
     0% {
         margin-left: -128px;
