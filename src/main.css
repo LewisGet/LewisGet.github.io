@@ -139,9 +139,19 @@ header
     margin-bottom : 30px;
 }
 
+#about div:hover .col-md-4
+{
+    -webkit-filter: blur(1.5px);
+}
+
+#about div .col-md-4:hover
+{
+    -webkit-filter: none;
+}
+
 .helicopter
 {
-    background-image : url("../images/helicopter.png");
+    background-image : url("../images/helicopter.gif");
     width            : 128px;
     height           : 128px;
 
