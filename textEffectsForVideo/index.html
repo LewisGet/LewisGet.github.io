@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>text effects for video</title>
+    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+    <style>
+        *
+        {
+            font-family: "微軟正黑體";
+            font-weight: bolder;
+        }
+
+        html, body, #main, #display
+        {
+            height: 100%;
+        }
+
+        #displayText
+        {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        #displayText span
+        {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div id="main" class="container-fluid">
+    <div id="menu" class="col-xs-2">
+        <div class="form-group">
+            <label for="inputText">Display Text</label>
+            <input type="text" class="input form-control" id="inputText" placeholder="Display Text" value="Display Text">
+        </div>
+        <div class="form-group">
+            <label for="inputSpeed">Speed</label>
+            <input type="text" class="input form-control" id="inputSpeed" placeholder="speed" value="100">
+        </div>
+        <div class="form-group">
+            <label for="inputStrong">Strong</label>
+            <input type="text" class="input form-control" id="inputStrong" placeholder="strong" value="2px">
+        </div>
+        <div class="form-group">
+            <label for="inputSize">Text Size</label>
+            <input type="text" class="input form-control" id="inputSize" placeholder="size" value="22px">
+        </div>
+        <div class="form-group">
+            <label for="inputColor">Color</label>
+            <input type="text" class="input form-control" id="inputColor" placeholder="color" value="#fff">
+        </div>
+        <div class="form-group">
+            <label for="inputShadow">Shadow</label>
+            <input type="text" class="input form-control" id="inputShadow" placeholder="shadow" value="1px 0 1px #000, -1px 0 1px #000, 0 -1px 1px #000, 0 1px 1px #000">
+        </div>
+        <div class="form-group">
+            <label for="inputBgColor">Background color</label>
+            <input type="text" class="input form-control" id="inputBgColor" placeholder="background color" value="#00ff00">
+        </div>
+        <div class="form-group">
+            <label for="inputLineHeight">Background color</label>
+            <input type="text" class="input form-control" id="inputLineHeight" placeholder="line height" value="25px">
+        </div>
+    </div>
+    <table id="display" class="col-xs-10">
+        <tr>
+            <td id="displayText">
+                some display
+            </td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    var ljText = {};
+
+    ljText.flush = function () {
+        window.display.style.backgroundColor = window.inputBgColor.value;
+
+        window.displayText.style.fontSize = window.inputSize.value;
+
+        window.displayText.style.color = window.inputColor.value;
+
+        window.displayText.style.lineHeight = window.inputLineHeight.value;
+
+        window.displayText.style.textShadow = inputShadow.value;
+
+        window.displayText.innerHTML = ljText.textBreaker(window.inputText.value);
+    };
+
+    ljText.showAnimate = function () {
+        ljText.animateText();
+
+        setTimeout("ljText.showAnimate();", window.inputSpeed.value);
+    };
+
+    ljText.animateText = function () {
+        var allWord = window.displayText.getElementsByTagName("span");
+
+        for (var index = 0; index < allWord.length; index++)
+        {
+            // 4 do not thing
+            var doWay = Math.round(Math.random() * 4);
+
+            if (0 == doWay)
+            {
+                allWord[index].style.top = inputStrong.value;
+                allWord[index].style.left = "";
+            }
+
+            if (1 == doWay)
+            {
+                allWord[index].style.top = "-" + inputStrong.value;
+                allWord[index].style.left = "";
+            }
+
+            if (2 == doWay)
+            {
+                allWord[index].style.top = "";
+                allWord[index].style.left = inputStrong.value;
+            }
+
+            if (3 == doWay)
+            {
+                allWord[index].style.top = "";
+                allWord[index].style.left = "-" + inputStrong.value;
+            }
+        }
+    };
+
+    ljText.textBreaker = function (value) {
+        var returnValue = "";
+
+        for (var index = 0; index < value.length; index++)
+        {
+            returnValue += "<span>" + value[index] + "</span>";
+        }
+
+        return returnValue;
+    };
+
+    ljText.inputListener = function () {
+        var allInput = document.getElementsByClassName("input");
+
+        for (var index = 0; index < allInput.length; index++)
+        {
+            allInput[index].onchange = ljText.flush;
+        }
+    };
+
+    ljText.init = function () {
+        ljText.inputListener();
+
+        ljText.flush();
+    };
+
+    ljText.init();
+</script>
+</body>
+</html>
