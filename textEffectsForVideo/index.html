@@ -13,7 +13,14 @@
 
         html, body, #main, #display
         {
+            padding: 0;
+            margin: 0;
             height: 100%;
+        }
+
+        #menu
+        {
+            padding-top: 15px;
         }
 
         #displayText
@@ -37,11 +44,11 @@
         </div>
         <div class="form-group">
             <label for="inputSpeed">Speed</label>
-            <input type="text" class="input form-control" id="inputSpeed" placeholder="speed" value="100">
+            <input type="text" class="input form-control" id="inputSpeed" placeholder="speed" value="50">
         </div>
         <div class="form-group">
             <label for="inputStrong">Strong</label>
-            <input type="text" class="input form-control" id="inputStrong" placeholder="strong" value="2px">
+            <input type="text" class="input form-control" id="inputStrong" placeholder="strong" value="1px">
         </div>
         <div class="form-group">
             <label for="inputSize">Text Size</label>
@@ -131,9 +138,32 @@
 
     ljText.textBreaker = function (value) {
         var returnValue = "";
+        var groupEnable = false;
+        var groupContent = "";
 
         for (var index = 0; index < value.length; index++)
         {
+            if ("{" == value[index])
+            {
+                groupEnable = true;
+                continue;
+            }
+
+            if (groupEnable && "}" == value[index])
+            {
+                returnValue += "<span>" + groupContent + "</span>";
+                groupContent = "";
+
+                continue;
+            }
+
+            if (groupEnable)
+            {
+                groupContent += value[index];
+
+                continue;
+            }
+
             returnValue += "<span>" + value[index] + "</span>";
         }
 
