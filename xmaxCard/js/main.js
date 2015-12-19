@@ -2,7 +2,7 @@ window.ljXmax = {
 };
 
 window.ljXmax.init = function () {
-    var name = location.search.replace("?", "");
+    var name = decodeURIComponent(location.search.replace("?", ""));
 
     var display = document.getElementById("displayName");
 
